@@ -8,11 +8,13 @@ if __name__ == '__main__':
     https://github.com/huaisha1224/jd-assistant/wiki/JD%E6%8A%A2%E8%B4%AD%E5%8A%A9%E6%89%8B
     """
 
-    sku_ids = '100001324422'  # 商品id
-    area = '1_72_4211'  # 区域id
+    sku_ids = '100012043978'  # 商品id
+    area = '15_1213_3038_59931'  # 区域id
     asst = Assistant()  # 初始化
     asst.login_by_QRcode()  # 扫码登陆
-    asst.buy_item_in_stock(sku_ids=sku_ids, area=area, wait_all=False, stock_interval=5)  # 根据商品是否有货自动下单
+    # asst.submit_seckill_order(sku_id=sku_ids)
+    asst.exec_seckill_by_time(sku_ids=sku_ids,buy_time='2022-04-13 11:59:59.999')
+    # asst.buy_item_in_stock(sku_ids=sku_ids, area=area, wait_all=False, stock_interval=5)  # 根据商品是否有货自动下单
     # 6个参数：
     # sku_ids: 商品id。可以设置多个商品，也可以带数量，如：'1234' 或 '1234,5678' 或 '1234:2' 或 '1234:2,5678:3'
     # area: 地区id
